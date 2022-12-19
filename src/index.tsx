@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App title="hola"/>
+    <App title="React and Typescript"/>
   </React.StrictMode>
 );
 
