@@ -8,8 +8,8 @@ const [task, setTask] = useState({
     description:""
 })
 
-const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    
+const handleInputChange = ({target: {name, value}}: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setTask({...task, [name]: value})
 }
 
   return (
