@@ -22,7 +22,9 @@ function App({title}: Props) {
     }
   ])
 
-
+  const addANewTask = (task: Task) => {
+    setTasks([...tasks, task])
+  }
 
   return (
     <div className="App">
@@ -40,7 +42,7 @@ function App({title}: Props) {
       
     </main>
 
-    <div><TaskForm /></div>
+    <div><TaskForm addANewTask={addANewTask} /></div>
 
     <div><div><TaskList tasks={tasks} /></div></div>
 
