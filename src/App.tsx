@@ -22,8 +22,15 @@ function App({title}: Props) {
     }
   ])
 
+  //para generar un id distinto
+  const getCurrentTimeStamp = (): number => new Date().getTime();
+
   const addANewTask = (task: Task) => {
-    setTasks([...tasks, task])
+    setTasks([...tasks, {...task, id:getCurrentTimeStamp() , completed: false}])
+  }
+
+  const deleteATask = (id: number) =>{
+   setTasks(tasks.filter(task => task.id !== id))
   }
 
   return (
@@ -44,7 +51,7 @@ function App({title}: Props) {
 
     <div><TaskForm addANewTask={addANewTask} /></div>
 
-    <div><div><TaskList tasks={tasks} /></div></div>
+    <div><div><TaskList tasks={tasks} deleteATask={deleteATask}/></div></div>
 
     
     </div>

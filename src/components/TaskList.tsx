@@ -4,6 +4,7 @@ import TaskCard from './TaskCard';
 
 interface Props {
     tasks: Task[];
+    deleteATask: (id:number)=> void;
 }
 
 const TaskList = ({tasks}: Props) => {

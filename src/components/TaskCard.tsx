@@ -3,6 +3,7 @@ import { Task } from '../interfaces/Task'
 
 interface Props {
     task: Task
+    deleteATask:(id:number)=> void;
 }
 
 const TaskCard = ({task}: Props) => {
