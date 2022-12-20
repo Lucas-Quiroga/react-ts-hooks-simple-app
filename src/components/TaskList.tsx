@@ -7,10 +7,10 @@ interface Props {
     deleteATask: (id:number)=> void;
 }
 
-const TaskList = ({tasks}: Props) => {
+const TaskList = ({tasks, deleteATask}: Props) => {
   return (
     <div>{tasks.map(task => (
-        <div><TaskCard task={task}/></div>
+        <div key={task.id}><TaskCard task={task} deleteATask={deleteATask}/></div>
       ))}</div>
   )
 }

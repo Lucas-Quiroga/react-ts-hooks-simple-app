@@ -6,13 +6,13 @@ interface Props {
     deleteATask:(id:number)=> void;
 }
 
-const TaskCard = ({task}: Props) => {
+const TaskCard = ({task, deleteATask}: Props)=>  {
   return (
 <div>
           <h2>{task.title}</h2>
           <p>{task.description}</p>
           <p>{task.id}</p>
-          <button>Delete</button>
+          <button onClick={()=> task.id && deleteATask(task.id)}>Delete</button>
         </div>  )
 }
 
