@@ -1,9 +1,18 @@
 import React from 'react'
+import { Task } from '../interfaces/Task'
 
-const TaskCard = () => {
+interface Props {
+    task: Task
+}
+
+const TaskCard = ({task}: Props) => {
   return (
-    <div>TaskCard</div>
-  )
+<div>
+          <h2>{task.title}</h2>
+          <p>{task.description}</p>
+          <p>{task.id}</p>
+          <button>Delete</button>
+        </div>  )
 }
 
 export default TaskCard

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Task } from '../interfaces/Task';
+import TaskCard from './TaskCard';
 
 interface Props {
     tasks: Task[];
@@ -8,9 +9,7 @@ interface Props {
 const TaskList = ({tasks}: Props) => {
   return (
     <div>{tasks.map(task => (
-        <div>
-          <h2>{task.title}</h2>
-        </div>
+        <div><TaskCard task={task}/></div>
       ))}</div>
   )
 }

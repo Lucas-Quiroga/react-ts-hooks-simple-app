@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Task } from './interfaces/Task';
 import logo from "./logo.svg"
+import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
 
 
 interface Props {
@@ -28,7 +31,7 @@ function App({title}: Props) {
         <div>
           <img src={logo} style={{width: "4rem"}} alt="React Logo" />
           <a href="/">
-            {title}
+            {title && <h1>{title}</h1>}
           </a>
         </div>
       </nav>
@@ -36,6 +39,11 @@ function App({title}: Props) {
     <main className="container">
       
     </main>
+
+    <div><TaskForm /></div>
+
+    <div><div><TaskList tasks={tasks} /></div></div>
+
     
     </div>
   );
